@@ -1,0 +1,90 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+  }
+  .Weather{
+    border: 1px solid red;
+    width: 700px;
+    height: 1000px;
+  }
+  .inner-container{
+    /* width: 100%;
+    height: 600px;
+    border: 1px solid red; */
+  }
+  .search-container{
+    width: 700px;
+    height: 50px;
+    border-radius: 5px;
+    padding-left: 40px;
+    
+  }
+  .button{
+    margin-left: 700px;
+    height: 50px;
+  }
+  
+  .Daily-conatiner{
+    border: 1px solid red;
+    width: 700px;
+    height: 120px;
+  
+  }
+  
+  .last-container{
+    border: 1px solid red;
+    width: 700px;
+    height: 400px;
+  }
+  .last1{
+    border: 1px solid red;
+    font-size: 50px;
+    font-weight:500;
+  }
+  .graph1{
+    border: 1px solid red;
+    height: 300px;
+  }
+  .pressurehumidity{
+    border: 1px solid green;
+    margin-top: 50px;
+    display: flex;
+    
+  }
+  .pressurehumidity > div{
+    border: 1px solid green;
+    width: 50%;
+    margin: 10px;
+    padding: 20px;
+    height: 60px;
+  }
+  .sunrisesunset{
+    border: 1px solid green;
+    display: flex;
+  }
+  .sunrisesunset > div{
+    border: 1px solid green;
+    width: 50%;
+    margin: 10px;
+    padding: 20px;
+    height: 60px;
+  }
+  .sunrise{
+    margin-left:-7%;
+  }
+  .sunset{
+    margin-left:90%;
+  }
+  /* .pressure{
+    border: 1px solid red;
+    width: 45%;
+    height: 100px;
+
+  }
+  .humidity{
+    border: 1px solid red;
+    width: 45%;
+    height: 100px;
+  } */
