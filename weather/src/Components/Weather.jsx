@@ -1,20 +1,27 @@
 import { useState, useEffect } from 'react';
 import './Weather.css';
+import sunny from '../Images/sunny.png';
 import rainy from '../Images/rainy.png';
-import sunny from '../Images/sunny.png'
-import Pin from '../Images/pin.png';
 import cloudy from '../Images/cloudy.png';
-import Search from '../Images/search.png';
+import Pin from '../Images/pin.png';
+import Search from '../Images/search.png'
 import Graph from './Graph';
-import Graph1 from './Graph1';
+import LowerGraph from './LowerGraph';
+
+
+// export const Weatherdata=createContext();
 
 
 export const Weather = () => {
-
+  // console.log(p.days)
   const APIKEY =  "5262a82ca11b1f015731374d38cc78d0";
-  const [list, setlist] = useState([]);
+  const [arraylist, setArraylist] = useState([]);
   const [city, setCity] = useState("");
 
+  console.log(arraylist);
+  useEffect(() => {
+    getlocation();
+  }, [])
 
   const getlocation = () => { //current location
     if (navigator.geolocation) {
@@ -23,23 +30,20 @@ export const Weather = () => {
       console.log("NS")
     }
   }
-  useEffect(() => {
-    getlocation();
-  }, []);
 
-  const showPosition = (e) => { 
-    e.preventDefault();
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}`)
+
+  const showPosition = (e) => { //current location
+    e.preventDefault()
+ 
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}&units=metricc`)
       .then(res => res.json())
       .then(data => getWeather(data.coord.lon, data.coord.lat))
-      .catch(err => console.log(err))
   }
 
   const getWeather = (lon, lat) => {
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${APIKEY}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${APIKEY}&units=metricc`)
     .then(res => res.json())
     .then(data => show(data))
-    .catch(err => console.log(err))
   }
 
   const currCityWeather = (position) => {
@@ -49,57 +53,70 @@ export const Weather = () => {
     getWeather(lon, lat);
   }
   const show = (data) => {
-    setlist(data.daily)
+    setArraylist(data.daily)
     console.log(data);
     // console.log("Current Location",data.daily)
   }
-
   const getLocation = (e) => {
     setCity(e.target.value);
     // showPosition()
   }
 
   return (
-    <div className='App'>
-      <div className="_flex">
+    <div className='outer-container'>
+      <div className="inner-container1">
         <form onSubmit={showPosition}>
-          <input className="search_box" placeholder='search' type="text" onChange={getLocation} />
+          <input className="inputBox" type="text"  placeholder='search'  onChange={getLocation} />
         </form>
-        <img className="Location_img" src={Pin} />
-        <img className="Search_img" src={Search} />
+        <img className="LocationImg" src= {Pin} />
+        <img className="SearchImg" src= {Search} />
       </div>
-      <div className="forecast">
+      <div className="inner-container2">
         {
-          list?.map((el, i) => {
-            console.log(el.dt)
-            const dateTimeStr = new Date(el.dt*1000).toLocaleString("en-US",{weekday:"long"}).slice(0,3);
+          arraylist?.map((e, i) => {
             return (
-              <div key={i} className="_iforecast">
-                <div className='Weather_info'>
-                  <p className="weekdays">{dateTimeStr}</p>
-                  <span className="span">{el.temp.max.toFixed()}&deg;</span>
-                  <span className="span mintemp">{el.temp.min.toFixed()}&deg;</span>
+              <div key={i} className="Weather_8days">
+                <div className='Weatherdetails'>
+                  <p className="weekdays">{new Date(e.dt*1000).toLocaleString("en-US",{weekday:"long"}).slice(0,3)}</p>
+                  <span className="span maxtemp">{e.temp.max.toFixed()}&deg;</span>
+                  <span className="span mintemp">{e.temp.min.toFixed()}&deg;</span>
                 </div>
-                <div className="Weather_image">
-                  <img className="image" src={(el.weather[0].main == "Clear") ? sunny : (el.weather[0].main == "Rain") ? rainy : cloudy} />
-                  <p className='Weather_status'>{el.weather[0].main}</p>
+                <div className="image_div">
+                  <img className="image" src={(e.weather[0].main == "Clear") ? sunny : (e.weather[0].main == "Rain") ? rainy : cloudy} />
+                  <p className='Weather_status'>{e.weather[0].main}</p>
                 </div>
               </div>
             )
           })}
       </div>
-      <div className='GraphDiv'>
+      <div className='inner-container3'>
         <div className="TempInfo">
-          <h1>{list.temp}</h1>
+          <h1>30°C</h1>
+          <h1></h1>
         </div>
-        {/* <Graph /> */}
-        <div className='TempDetails'>
-            
+        <Graph />
+        <div className="pressurehumidity">
+                        <div className="pressure">
+                            <p>Pressure <br />1001 hpa</p>
+                        </div>
+                        <div className="humidity">
+                            <p>Humidity <br /> 100 %</p>
+                        </div>
         </div>
-        <div className='TempDetails1'>
-
-        </div>
-        {/* <Graph1 /> */}
+        <div className="last">
+                        <div className="sunrisesunset">
+                            <div>
+                                {/* <p className="sunrise">Sunrise <br />{ new Date(city.sys.sunrise * 1000).toLocaleTimeString()}  5:01am</p>  */}
+                                <p className="sunrise"><h6>Sunrise </h6><br />5:50am</p> 
+                            </div> 
+                            <div>
+                                {/* <p className="sunset">Sunset <br />{new Date(city.sys.sunset  * 1000).toLocaleTimeString()} 6:23am</p> */}
+                                <p className="sunset">Sunset <br />6:00pm</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+        <LowerGraph />
       </div>
     </div>
   )
