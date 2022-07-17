@@ -1,183 +1,232 @@
   .outer-container {
     /* border:1px solid red; */
-    width:50%;
-    padding: 10px;
+    width: 50%;
     margin: auto;
-   
+    padding: 10px;
+
   }
-  form{
-    width: 100%;
-  }
-  .inputBox{
+
+  .inputBox {
     /* border: 1px solid red; */
     border: 2px solid black;
     border-color: #c4c1c1;
-    width:100%;
-    height:60px;
-    border-radius:10px;
-    padding-left:50px;
-    padding-right:60px;
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    padding-left: 50px;
+    padding-right: 60px;
     font-family: sans-serif;
     font-size: 18px;
     font-weight: bold;
     text-transform: capitalize;
-    box-shadow: 0 0 7px 5px #F5F5F5;;
+    box-shadow: 0 0 7px 5px #F5F5F5;
+    ;
   }
-  .inner-container1{
+
+  .inner-container1 {
     /* border: 1px solid red; */
-    display:flex;
+    display: flex;
     width: 100%;
     position: relative;
   }
-  .LocationImg{
-    width:20px;
-    height:20px;
-    margin-top:20px;
-    margin-left:20px;
-    position: absolute;
-  }
-  .SearchImg{
-    width:20px;
-    height:20px;
-    margin-top:20px;
-    right:20px;
+
+  .LocationImg {
+    width: 20px;
+    height: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
     position: absolute;
   }
 
-  .inner-container2{
-    border:1px solid red;
+  .SearchImg {
+    width: 20px;
+    height: 20px;
+    margin-top: 20px;
+
+    right: 20px;
+    position: absolute;
+  }
+
+  .inner-container2 {
+    /* border:1px solid red; */
     width: 100%;
-    height:180px;
+    height: 180px;
     overflow-y: hidden;
     overflow-x: scroll;
     margin-top: 3%;
     white-space: nowrap;
   }
-  .Weather_8days{
+
+  .Weather_8days {
     /* border: 1px solid red; */
-    width:100px;
-    height:88%; 
+    width: 100px;
+    height: 90%;
     text-align: center;
-    display: inline-block; 
+    display: inline-block;
   }
-  .Weatherdetails{
+
+  .Weather_8days:hover {
+    border: 4px solid #03A9F4;
+  }
+
+  .Weatherdetails {
     /* border: 1px solid red; */
-    width:100%;
-    height:40%;
+    width: 100%;
+    height: 40%;
   }
-  .weekdays{
+
+  .weekdays {
     /* border:1px solid red; */
-    width:100%;
-    height:20px;
+    width: 100%;
+    height: 20px;
     font-family: sans-serif;
     font-weight: bold;
     color: #2a2c2e;
   }
-  .span{
+
+  .span {
     /* border: 1px solid red; */
     font-family: sans-serif;
     font-size: 100%;
     font-weight: bold;
     position: relative;
-    color:#2a2c2e;
-    top:-10px;
+    color: #2a2c2e;
+    top: -10px;
     padding-right: 7%;
     display: inline-block;
   }
-  .mintemp{
+
+  .mintemp {
     color: gray;
   }
-  .image_div{
+
+  .image_div {
     /* border: 1px solid red; */
     /* margin-top: 10PX; */
-    width:100%;
-    height:50%;
+    width: 100%;
+    height: 55%;
   }
-  .image{
-    /* margin-bottom: 10PX; */
-    height:50%;
-    width:30%;
+
+  .image {
+    margin-bottom: -10PX;
+    height: 50%;
+    width: 30%;
   }
-  .Weather_status{
+
+  .Weather_status {
     font-weight: 700;
-    color:#959596;
+    color: #959596;
     font-family: sans-serif;
   }
-  .app{
-      overflow-x: scroll;
-      overflow-y: scroll;
-      /* border:1px solid green; */
-      width: 98%;
+
+  .TempInfo {
+    /* border: 1px solid red; */
+    margin-left: 20px;
+    margin-top: 20px;
   }
-  .inner-container3{
+
+  .temp1{
+    /* border: 1px solid red; */
+      font-weight: 600;
+      font-size: 50px;
+      margin-top: -10px;
+  }
+  .tempimg{
+    /* border: 1px solid red; */
+    margin-top: 10px;
+    width: 5%;
+    margin-left: 1%;
+
+  }
+  .app {
+    overflow-x: scroll;
+    overflow-y: scroll;
+    /* border:1px solid green; */
+    width: 98%;
+  }
+
+  .inner-container3 {
     border: 1px solid #c5c5c5;
     width: 100%;
     margin-top: 25px;
     border-radius: 10px;
-    box-shadow: 0 0 10px 5px #F5F5F5;;
+    box-shadow: 0 0 10px 5px #F5F5F5;
+    ;
   }
-  .row{
-  width:100%;
+
+  .row {
+    width: 100%;
   }
-  .TempInfo{
+
+  .TempInfo {
     /* border:1px solid chartreuse; */
-    width:100%;
-    height:8%;
+    width: 100%;
+    height: 8%;
   }
-  .pressurehumidity{
-    border: 1px solid green;
-    margin-top: 50px;
+
+  .pressurehumidity {
+    /* border: 1px solid green; */
+    margin-top: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
     display: flex;
-    
+
   }
-  .pressurehumidity > div{
-    border: 1px solid green;
+
+  .pressurehumidity>div {
+    /* border: 1px solid red; */
     width: 50%;
     margin: 10px;
-    padding: 20px;
-    height: 60px;
+    padding: 15px;
+    height: 40px;
+    background-color: #f3fbff;
+
   }
-  .sunrisesunset{
-    border: 1px solid green;
+
+  .sunrisesunset {
+    /* border: 1px solid green; */
     margin-top: 0px;
     display: flex;
-    
+
   }
-  .sunrisesunset > div{
-    border: 1px solid green;
+
+  .sunrisesunset>div {
+    /* border: 1px solid green; */
     width: 50%;
     margin: 10px;
     padding: 20px;
-    height: 60px;
+    height: 40px;
   }
-  .sunrise{
-    margin-left: -7%;
+
+  .sunrise {
+    margin-left: -4%;
+
     line-height: 20px;
   }
-  .sunset{
-    margin-left:90%; 
-  } 
-  .pressure{
-    border: 1px solid red;
+
+  .sunset {
+    margin-left: 87%;
+  }
+
+  .pressure {
+    /* border: 1px solid red; */
     width: 45%;
     height: 100px;
 
   }
-  .humidity{
-    border: 1px solid red;
+
+  a {
+    font-weight: 700;
+  }
+
+  .p1 {
+    margin-top: -3px;
+  }
+
+  .humidity {
+    /* border: 1px solid red; */
     width: 45%;
     height: 100px;
-  } 
-  .LowerGraph1{
-  /* border:1px solid goldenrod; */
-  padding-left: 5%;
   }
-  .TempDetails{
-    /* border:1px solid greenyellow; */
-    height:9%
-  }
-  .TempDetails1{
-    /* border:1px solid red; */
-    height:9%
-  }
+
   
