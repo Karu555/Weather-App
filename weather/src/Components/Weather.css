@@ -1,5 +1,6 @@
+
   .outer-container {
-    /* border:1px solid red; */
+    border:1px solid red;
     width: 50%;
     margin: auto;
     padding: 10px;
@@ -7,10 +8,40 @@
   }
 
   .inputBox {
+    /* border: 5px solid red;
+    border: 2px solid black; */
+    /* border-color: #c4c1c1; */
+    /* width: 100%; */
+    /* height: 60px; */
+    /* border-radius: 10px;
+    padding-left: 50px;
+    padding-right: 60px;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+    box-shadow: 0 0 7px 5px #F5F5F5; */
+    border: none;
+    height: 58px;
+    width: 100%;
+    font-size: large;
+    padding-right: 60px;
+    
+  }
+  .inputBox:hover{
+    outline: none;
+  }
+  .inputBox:focus {
+    outline: 0 !important;
+}
+  .inner-container1 {
     /* border: 1px solid red; */
+    display: flex;
+    /* width: 100%; */
+    position: relative;
     border: 2px solid black;
     border-color: #c4c1c1;
-    width: 100%;
+    /* width: 100%; */
     height: 60px;
     border-radius: 10px;
     padding-left: 50px;
@@ -20,21 +51,13 @@
     font-weight: bold;
     text-transform: capitalize;
     box-shadow: 0 0 7px 5px #F5F5F5;
-    ;
-  }
-
-  .inner-container1 {
-    /* border: 1px solid red; */
-    display: flex;
-    width: 100%;
-    position: relative;
   }
 
   .LocationImg {
     width: 20px;
     height: 20px;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: -30px;
     position: absolute;
   }
 
@@ -193,21 +216,24 @@
   .sunrisesunset>div {
     /* border: 1px solid green; */
     width: 50%;
-    margin: 10px;
-    padding: 20px;
+    /* margin: 10px; */
+    padding-bottom: 20px;
+    padding-left: 25px;
     height: 40px;
   }
 
   .sunrise {
-    margin-left: -4%;
-
-    line-height: 20px;
+    margin-left: -3%;
+    padding-top: -10px;
+ 
   }
 
   .sunset {
-    margin-left: 87%;
+    /* border: 1px solid red; */
+    text-align: right;
+    padding-right: 15px; 
   }
-
+  
   .pressure {
     /* border: 1px solid red; */
     width: 45%;
@@ -216,6 +242,7 @@
   }
 
   a {
+    
     font-weight: 700;
   }
 
@@ -229,4 +256,3 @@
     height: 100px;
   }
 
-  
