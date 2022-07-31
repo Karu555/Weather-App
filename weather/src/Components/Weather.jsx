@@ -9,14 +9,13 @@ import Search from '../Images/search.png';
 import Graph1 from './Graph1';
 import Graph2 from './Graph2';
 
-
 export const Weather = () => {
 
   const APIKEY =  "5262a82ca11b1f015731374d38cc78d0";
   const [arraylist, setarraylist] = useState([]);
   const [list, setList] = useState([]);
   const [city, setCity] = useState("");
-
+  const [temparr, setTemparr] = useState([]);
 
 
   const showPosition = (e) => { 
@@ -43,14 +42,22 @@ export const Weather = () => {
   }
   const show = (data) => {
     setarraylist(data.daily)
-    console.log(data);
+    // console.log(data);
     setList(data.current)
+    let array = []
+    for(let i=0; i<24; i++){
+      array.push(data.hourly[i].temp)
+    }
+    setTemparr(array);
 
   }
 
-  console.log(list);
+  // console.log(list);
+  // console.log(arraylist);
+  console.log(temparr);
   const getLocation = (e) => {
     setCity(e.target.value);
+    // showPosition()
   }
 
   
@@ -66,6 +73,8 @@ export const Weather = () => {
   useEffect(() => {
     getlocation();
   }, []);
+
+  // const currtemp = list.temp.toFixed();
 
   return (
     <div className='outer-container'>
@@ -98,12 +107,12 @@ export const Weather = () => {
       </div>
       <div className='inner-container3'>
         <div className="TempInfo">
-          <span className='temp1'>{list.temp}°C</span>
+          <span className='temp1'>{Math.floor(list.temp)}°C</span>
           <span><img className="tempimg" src={cloudy} alt="" /></span>
   
 
         </div>
-        <Graph1 />
+        <Graph1 array={temparr} />
         <div className="pressurehumidity">
                         <div className="pressure">
                             <p className='p1'><a>Pressure</a> <br />{list.pressure} hpa</p>
