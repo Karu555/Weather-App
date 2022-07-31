@@ -1,7 +1,8 @@
 import React from "react";
 import Chart from "react-apexcharts";
 import "../App.css";
-function Graph() {
+function Graph({array}) {
+// console.log(array, "inside graph")
     var obj = {
       options: {
         chart: {
@@ -13,7 +14,7 @@ function Graph() {
           curve: 'smooth',
         },
         xaxis: {
-          categories: ["","9","10","11","12","1","2","3","4","5","6","7","8","9"]
+          // categories: ["","9","10","11","12","1","2","3","4","5","6","7","8","9"]
         },
         dataLabels: {
           enabled: false
@@ -22,7 +23,7 @@ function Graph() {
       series: [
         {
           name: "series-1",
-          data: [21,24,29,31,34,39,40,47,45,41,38,35,30,25]
+          data: [...array]
         }
       ],
 
