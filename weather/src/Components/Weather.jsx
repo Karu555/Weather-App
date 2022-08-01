@@ -8,6 +8,7 @@ import cloudy from '../Images/cloudy.png';
 import Search from '../Images/search.png';
 import Graph1 from './Graph1';
 import Graph2 from './Graph2';
+import { JsonData } from './DataJson';
 
 export const Weather = () => {
 
@@ -16,7 +17,12 @@ export const Weather = () => {
   const [list, setList] = useState([]);
   const [city, setCity] = useState("");
   const [temparr, setTemparr] = useState([]);
+  const [search, setSearch] = useState([]);
+  const [wordEnter, setWordEnter] = useState("");
+  
+  const [value, setValue] = useState("");
 
+  
 
   const showPosition = (e) => { 
     e.preventDefault()
@@ -57,10 +63,28 @@ export const Weather = () => {
   console.log(temparr);
   const getLocation = (e) => {
     setCity(e.target.value);
+    setValue(e.target.value);
+
+    const searchWord = e.target.value
+    setWordEnter(searchWord);
+    const newFilter = JsonData.filter((value) => {
+      const input = value.name.toLowerCase().includes(searchWord.toLowerCase());
+      return input ;
+
+    });
+    if(searchWord === ""){
+      setSearch([]);
+    }else{
+      setSearch(newFilter);
+     
+    }
+    
     // showPosition()
   }
 
-  
+ const onSearch = (searchWord) => {
+  setValue(searchWord);
+ }
   const getlocation = () => { 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(currCityWeather);
@@ -80,11 +104,24 @@ export const Weather = () => {
     <div className='outer-container'>
       <div className="inner-container1">
         <form onSubmit={showPosition}>
-          <input className="inputBox" type="text" placeholder='search'  onChange={getLocation} />
+          <input className="inputBox" type="text" placeholder='search' value={value} onChange={getLocation} />
         </form>
         <img className="LocationImg" src={Pin} />
         <img className="SearchImg" src={Search} />
       </div>
+      {search.length != 0  && (
+        <div className='citybox'>
+      {
+            // return <div className='inputBox'>{`${val.name}, ${val.state}` }</div>
+            search.map((value, key) => {
+              return <div>
+                <div className='cityname' onClick= {() => onSearch(`${value.name}, ${value.state}`)}>{`${value.name}, ${value.state}` }</div>
+              </div>
+
+            })
+          }
+      </div>
+      )}
       <div className="inner-container2">
         {
           arraylist?.map((e, i) => {
@@ -125,11 +162,11 @@ export const Weather = () => {
                         <div className="sunrisesunset">
                             <div>
                                 {/* <p className="sunrise">Sunrise <br />{ new Date(city.sys.sunrise * 1000).toLocaleTimeString()}  5:01am</p>  */}
-                                <p className="sunrise"> <a>Sunrise</a> <br />{new Date(list.sunrise*1000).toLocaleString().slice(11, 15)}am</p> 
+                                <p className="sunrise"> <a>Sunrise</a> <br />{new Date(list.sunrise*1000).toLocaleString().slice(10, 14)}am</p> 
                             </div> 
                             <div>
                                 {/* <p className="sunset">Sunset <br />{new Date(city.sys.sunset  * 1000).toLocaleTimeString()} 6:23am</p> */}
-                                <p className="sunset"><a>Sunset</a> <br />{new Date(list.sunset*1000).toLocaleString().slice(11, 15)}pm</p>
+                                <p className="sunset"><a>Sunset</a> <br />{new Date(list.sunset*1000).toLocaleString().slice(10, 14)}pm</p>
                                 
                             </div>
                         </div>
