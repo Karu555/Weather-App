@@ -7,12 +7,14 @@ You can get instant alerts regarding weather conditions through this weather app
 
 ## Tech Stack used : 
 ### Front-end
+- HTML
+- CSS
 - React.js
 
 
 ## Useful Links :
-- **Github repo link :  https://github.com/Karu555/Mento-clone-frontend**
-- **Deployment link :  https://mento-clone-frontend.vercel.app/**
+- **Github repo link :  https://github.com/Karu555/Weather-App**
+- **Deployment link :  https://weatherapp-karunesh.netlify.app/**
 
 
 ## LinkedIn ##
