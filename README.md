@@ -21,6 +21,7 @@ You can get instant alerts regarding weather conditions through this weather app
 - **Landing Page :** 
 
 (❮img src="imag/weather1.png" width="100" ❯)
+![weatherpic.png](weather1.png)
  
 ![weatherpic2.png](file:///C:/Users/DELL/Pictures/Screenshots/weatherpic2.png)
 
