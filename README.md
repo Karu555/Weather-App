@@ -14,13 +14,13 @@ You can get instant alerts regarding weather conditions through this weather app
 
 ## Useful Links :
 - **Github repo link :  https://github.com/Karu555/Weather-App**
-- **Deployment link :  https://weatherapp-karunesh.netlify.app/*
+- **Deployment link :  https://weatherapp-karunesh.netlify.app/**
 
 ### Screenshots :
 
 - **Landing Page :** 
 
-❮img src="imag/weather1.png" width="100" ❯
+(❮img src="imag/weather1.png" width="100" ❯)
  
 ![weatherpic2.png](file:///C:/Users/DELL/Pictures/Screenshots/weatherpic2.png)
 
