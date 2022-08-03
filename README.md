@@ -20,7 +20,7 @@ You can get instant alerts regarding weather conditions through this weather app
 
 - **Landing Page :** 
 
-![weatherpic1.png](file:///C:/Users/DELL/Pictures/Screenshots/weatherpic1.png)
+❮img src="imag/weather1.png" width="100" ❯
  
 ![weatherpic2.png](file:///C:/Users/DELL/Pictures/Screenshots/weatherpic2.png)
 
